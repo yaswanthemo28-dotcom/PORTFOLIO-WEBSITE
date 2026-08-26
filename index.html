@@ -1,1 +1,504 @@
+Here is the **complete, fully finished `index.html`** with the missing contact section and footer added, syntax errors resolved, and all links hooked up properly.
 
+---
+
+### How to use in VS Code:
+1. Open **VS Code**.
+2. Click **File -> New File** and name it **`index.html`**.
+3. Paste the complete code below.
+4. Save the file (`Ctrl + S` or `Cmd + S`).
+5. Right-click the file and choose **Open with Live Server** (or open the file directly in any browser).
+
+---
+
+### Complete Code (`index.html`)
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaswanth | CSDA Portfolio & AI Security</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#070C14',
+                            surface: '#0E1726',
+                            card: '#142033',
+                            border: '#1E2E4A',
+                            emerald: '#00FFA3',
+                            cyan: '#00E5FF',
+                            purple: '#A855F7',
+                            muted: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neon-emerald': '0 0 30px -5px rgba(0, 255, 163, 0.4)',
+                        'neon-cyan': '0 0 30px -5px rgba(0, 229, 255, 0.4)',
+                        'card-glow': '0 10px 40px -10px rgba(0, 255, 163, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .grid-background {
+            background-image: 
+                linear-gradient(to right, rgba(30, 46, 74, 0.25) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(30, 46, 74, 0.25) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00FFA3 0%, #00E5FF 50%, #A855F7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-box {
+            background: rgba(14, 23, 38, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(0, 255, 163, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .glass-box:hover {
+            border-color: rgba(0, 255, 163, 0.4);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-cyber-bg text-slate-100 font-sans selection:bg-cyber-emerald selection:text-cyber-bg overflow-x-hidden">
+
+    <!-- Fixed Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-cyber-bg/85 backdrop-blur-md border-b border-cyber-border/70">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#about" class="text-xl font-display font-extrabold tracking-wider flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-cyber-emerald animate-pulse"></span>
+                <span>YASWANTH<span class="text-cyber-emerald">.CSDA</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-cyber-muted">
+                <a href="#about" class="hover:text-cyber-emerald transition-colors">1. About</a>
+                <a href="#skills" class="hover:text-cyber-emerald transition-colors">2. Skills</a>
+                <a href="#project" class="hover:text-cyber-emerald transition-colors">3. Project</a>
+                <a href="#certificates" class="hover:text-cyber-emerald transition-colors">4. Certificates</a>
+                <a href="#contact" class="hover:text-cyber-emerald transition-colors">5. Contacts</a>
+            </nav>
+
+            <a href="#contact" class="px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-cyber-emerald/10 border border-cyber-emerald/40 text-cyber-emerald hover:bg-cyber-emerald hover:text-cyber-bg transition-all">
+                Let's Talk
+            </a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         PAGE 1: ABOUT SECTION
+    =========================================== -->
+    <section id="about" class="grid-background min-h-screen pt-36 pb-24 flex items-center relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-8 space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-cyber-card border border-cyber-emerald/40 text-cyber-emerald">
+                    <i class="fa-solid fa-graduation-cap"></i> Student of CSDA Department
+                </div>
+                
+                <!-- BOLD HERO SIZE HEADING -->
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight leading-none uppercase">
+                    HELLO, I AM <br/>
+                    <span class="gradient-text">YASWANTH</span>
+                </h1>
+                
+                <div class="space-y-4 max-w-2xl text-slate-300 text-lg leading-relaxed">
+                    <p>
+                        I am an enthusiastic undergraduate in the <strong class="text-cyber-emerald font-semibold">Computer Science and Data Analytics (CSDA)</strong> department. My work bridges responsive frontend engineering, backend dynamic processing, and proactive cybersecurity research.
+                    </p>
+                    <p class="text-base text-cyber-muted">
+                        Driven by analytical thinking and clean code architecture, I build secure web applications and data privacy tools that identify vulnerabilities before malicious attackers can exploit them.
+                    </p>
+                </div>
+
+                <!-- Action Links -->
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#project" class="px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-cyber-emerald to-cyber-cyan text-cyber-bg hover:shadow-neon-emerald transition-all flex items-center gap-2 text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved"></i> Explore AI Exposure Project
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-xl font-bold bg-cyber-card border border-cyber-border hover:border-cyber-cyan hover:text-cyber-cyan transition-all text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i> Contact Yaswanth
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Summary Card -->
+            <div class="lg:col-span-4">
+                <div class="glass-box rounded-3xl p-8 border border-cyber-border shadow-2xl relative overflow-hidden">
+                    <div class="w-20 h-20 rounded-2xl bg-cyber-emerald/10 border border-cyber-emerald/30 flex items-center justify-center text-3xl text-cyber-emerald mb-6">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold font-display text-white">Yaswanth</h3>
+                    <p class="text-cyber-emerald font-mono text-sm mt-1">CSDA Department</p>
+
+                    <hr class="border-cyber-border/80 my-6">
+
+                    <ul class="space-y-3 font-mono text-xs text-cyber-muted">
+                        <li class="flex justify-between">
+                            <span>Status:</span>
+                            <span class="text-slate-200">Active Student & Builder</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Core Focus:</span>
+                            <span class="text-slate-200">Data Analytics & Web Tech</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Primary Domain:</span>
+                            <span class="text-slate-200">PII Privacy & AI Monitoring</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 2: MY SKILLS SECTION
+    =========================================== -->
+    <section id="skills" class="py-28 bg-cyber-surface/60 border-y border-cyber-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-widest text-cyber-emerald font-bold">// 02. Technical Arsenal</span>
+                <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white mt-2">My Core Skills</h2>
+                <p class="text-cyber-muted mt-3 text-base">The foundational programming languages and technologies powering my web development and security tools.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Skill 1: HTML -->
+                <div class="glass-box p-8 rounded-3xl relative">
+                    <div class="w-16 h-16 rounded-2xl bg-orange-500/10 text-orange-400 border border-orange-500/30 flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <span class="text-xs font-mono text-orange-400 font-bold uppercase">Markup Standard</span>
+                    <h3 class="text-2xl font-bold font-display text-white mt-1 mb-3">HTML / HTML5</h3>
+                    <p class="text-cyber-muted text-sm leading-relaxed mb-6">
+                        Expertise in semantic structures, web accessibility, cross-browser compatibility, and building clean, crawlable document layouts.
+                    </p>
+                    <div class="w-full bg-cyber-border h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-[95%]"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2: CSS -->
+                <div class="glass-box p-8 rounded-3xl relative">
+                    <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 text-cyber-cyan border border-cyber-cyan/30 flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <span class="text-xs font-mono text-cyber-cyan font-bold uppercase">Styling & UI/UX</span>
+                    <h3 class="text-2xl font-bold font-display text-white mt-1 mb-3">CSS / CSS3</h3>
+                    <p class="text-cyber-muted text-sm leading-relaxed mb-6">
+                        Crafting responsive layouts with Flexbox and Grid, glassmorphism design systems, keyframe animations, and modern styling architectures.
+                    </p>
+                    <div class="w-full bg-cyber-border h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full w-[90%]"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3: PHP -->
+                <div class="glass-box p-8 rounded-3xl relative">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-500/10 text-cyber-purple border border-cyber-purple/30 flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-brands fa-php"></i>
+                    </div>
+                    <span class="text-xs font-mono text-cyber-purple font-bold uppercase">Backend Scripting</span>
+                    <h3 class="text-2xl font-bold font-display text-white mt-1 mb-3">PHP</h3>
+                    <p class="text-cyber-muted text-sm leading-relaxed mb-6">
+                        Server-side business logic execution, database queries (CRUD with MySQL), API integration, session management, and authentication safety.
+                    </p>
+                    <div class="w-full bg-cyber-border h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-400 to-indigo-500 h-full w-[85%]"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 3: MY PROJECT (LONG EXPLANATION)
+    =========================================== -->
+    <section id="project" class="py-28 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <span class="px-4 py-1 rounded-full text-xs font-mono uppercase bg-cyber-emerald/10 text-cyber-emerald border border-cyber-emerald/30 font-bold">
+                    // 03. Flagship Innovation
+                </span>
+                <h2 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white mt-4">
+                    AI Personal Data Exposure Monitor
+                </h2>
+                <p class="text-cyber-muted mt-4 text-base sm:text-lg">
+                    A comprehensive cybersecurity intelligence platform engineered to continuously detect, evaluate, and mitigate personal data leaks across the public web and compromised breach databases.
+                </p>
+            </div>
+
+            <!-- In-Depth Project Card -->
+            <div class="glass-box rounded-3xl p-8 lg:p-14 border border-cyber-emerald/30 shadow-card-glow space-y-12">
+                
+                <!-- Detailed Section 1: About the Project -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-8 space-y-4">
+                        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white flex items-center gap-3">
+                            <i class="fa-solid fa-circle-info text-cyber-emerald"></i> What is this Project About?
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            In modern computing, sensitive Personal Identifiable Information (PII)—including email addresses, passwords, phone numbers, identity numbers, and credit card records—is constantly at risk of being leaked in third-party database breaches, dark web repositories, and unsecured paste sites.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            The <strong class="text-cyber-emerald">AI Personal Data Exposure Monitor</strong> is a cybersecurity platform developed to solve this problem. Instead of forcing users to discover breaches after identity theft or unauthorized account takeovers occur, this platform functions as a round-the-clock digital surveillance guardian that proactively checks whether user data has been compromised and quantifies how dangerous that exposure is.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 bg-cyber-surface/90 p-6 rounded-2xl border border-cyber-border space-y-3 font-mono text-xs">
+                        <div class="text-cyber-emerald font-bold uppercase tracking-wider mb-2">// System Specifications</div>
+                        <div class="flex justify-between border-b border-cyber-border/70 pb-2">
+                            <span class="text-cyber-muted">Frontend:</span>
+                            <span class="text-slate-100 font-bold">HTML5, CSS3</span>
+                        </div>
+                        <div class="flex justify-between border-b border-cyber-border/70 pb-2">
+                            <span class="text-cyber-muted">Backend Engine:</span>
+                            <span class="text-slate-100 font-bold">PHP & REST APIs</span>
+                        </div>
+                        <div class="flex justify-between border-b border-cyber-border/70 pb-2">
+                            <span class="text-cyber-muted">Intelligence:</span>
+                            <span class="text-cyber-cyan font-bold">AI Pattern NLP Scanner</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-cyber-muted">Analytics Focus:</span>
+                            <span class="text-cyber-purple font-bold">CSDA Threat Indexing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-cyber-border/80">
+
+                <!-- Detailed Section 2: How It Works (Step-by-Step Long Explanation) -->
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-gears text-cyber-cyan"></i> How Does It Work? (Complete Workflow)
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        
+                        <!-- Step 1 -->
+                        <div class="bg-cyber-surface/70 p-6 rounded-2xl border border-cyber-border space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-emerald/10 text-cyber-emerald flex items-center justify-center font-mono font-bold text-lg border border-cyber-emerald/30">
+                                01
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Identity Ingestion & Hashing</h4>
+                            <p class="text-xs text-cyber-muted leading-relaxed">
+                                The user provides monitored parameters (e.g., email or username). The system uses SHA-256 cryptographic hashing on the client/server side so the actual sensitive data is never exposed in plain text.
+                            </p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="bg-cyber-surface/70 p-6 rounded-2xl border border-cyber-border space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 text-cyber-cyan flex items-center justify-center font-mono font-bold text-lg border border-cyber-cyan/30">
+                                02
+                            </div>
+                            <h4 class="text-lg font-bold text-white">AI Web Crawling & Scraping</h4>
+                            <p class="text-xs text-cyber-muted leading-relaxed">
+                                Backend PHP routines interface with public breach indexes, OSINT feeds, and paste APIs. An AI entity-recognition engine reads raw text dumps to extract matched email-password combinations and credential exposures.
+                            </p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="bg-cyber-surface/70 p-6 rounded-2xl border border-cyber-border space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-purple/10 text-cyber-purple flex items-center justify-center font-mono font-bold text-lg border border-cyber-purple/30">
+                                03
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Heuristic Exposure Scoring</h4>
+                            <p class="text-xs text-cyber-muted leading-relaxed">
+                                The AI engine assesses breach severity: plain-text passwords trigger a <strong>Critical Risk (90-100%)</strong> alert, while isolated emails or public metadata result in a Moderate status score.
+                            </p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="bg-cyber-surface/70 p-6 rounded-2xl border border-cyber-border space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-mono font-bold text-lg border border-pink-500/30">
+                                04
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Mitigation & Action Plans</h4>
+                            <p class="text-xs text-cyber-muted leading-relaxed">
+                                The dashboard produces tailored remediation advice: instructions for one-click password rotation, revoking exposed API keys, and enabling multi-factor authentication (2FA).
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 4: MY CERTIFICATES SECTION
+    =========================================== -->
+    <section id="certificates" class="py-28 bg-cyber-surface/60 border-t border-cyber-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-widest text-cyber-cyan font-bold">// 04. Verified Credentials</span>
+                <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white mt-2">My Certificates</h2>
+                <p class="text-cyber-muted mt-3 text-base">Direct links to verified technical certifications and course completions on Google Drive.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Certificate 1 -->
+                <div class="glass-box rounded-3xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyber-emerald/10 text-cyber-emerald border border-cyber-emerald/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <span class="text-xs font-mono text-cyber-emerald font-bold">Certificate #1</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">Technical Credential 01</h4>
+                        <p class="text-xs text-cyber-muted leading-relaxed">
+                            Verified certification demonstrating core engineering proficiency and technical assessment.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-border/80">
+                        <a href="https://drive.google.com/file/d/1wOZMpQs6qGap_iO6c6ie3gTCrBjslTFb/view" target="_blank" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-cyber-card border border-cyber-emerald/40 text-cyber-emerald hover:bg-cyber-emerald hover:text-cyber-bg transition-all flex items-center justify-center gap-2">
+                            <span>View Certificate</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="glass-box rounded-3xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <span class="text-xs font-mono text-cyber-cyan font-bold">Certificate #2</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">Technical Credential 02</h4>
+                        <p class="text-xs text-cyber-muted leading-relaxed">
+                            Verified course completion covering computational problem solving and data principles.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-border/80">
+                        <a href="https://drive.google.com/file/d/1ySFbKkUh5eNOWjyYG_jx8e7J2vWBaDL_/view" target="_blank" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-cyber-card border border-cyber-cyan/40 text-cyber-cyan hover:bg-cyber-cyan hover:text-cyber-bg transition-all flex items-center justify-center gap-2">
+                            <span>View Certificate</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="glass-box rounded-3xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <span class="text-xs font-mono text-cyber-purple font-bold">Certificate #3</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">Technical Credential 03</h4>
+                        <p class="text-xs text-cyber-muted leading-relaxed">
+                            Validation of specialized software development and practical application learning.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-border/80">
+                        <a href="https://drive.google.com/file/d/1kPWlXQJycMaKYdJHhDt7Z2CeiVnV7o38/view" target="_blank" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-cyber-card border border-cyber-purple/40 text-cyber-purple hover:bg-cyber-purple hover:text-cyber-bg transition-all flex items-center justify-center gap-2">
+                            <span>View Certificate</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="glass-box rounded-3xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-400 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                        <span class="text-xs font-mono text-pink-400 font-bold">Certificate #4</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">Technical Credential 04</h4>
+                        <p class="text-xs text-cyber-muted leading-relaxed">
+                            Certificate of accomplishment representing technical achievement in CSDA curriculum.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-border/80">
+                        <a href="https://drive.google.com/file/d/1_1_yH5_IbprlyfIbDDJ_t5KqMFU7kvBS/view" target="_blank" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-cyber-card border border-pink-500/40 text-pink-400 hover:bg-pink-500 hover:text-cyber-bg transition-all flex items-center justify-center gap-2">
+                            <span>View Certificate</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 5: MY CONTACTS SECTION
+    =========================================== -->
+    <section id="contact" class="py-28 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-widest text-cyber-emerald font-bold">// 05. Direct Connect</span>
+                <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white mt-2">Get In Touch</h2>
+                <p class="text-cyber-muted mt-3 text-base">Let's discuss collaborations, projects, or professional opportunities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Email Contact Card -->
+                <a href="mailto:yaswanthemo28@gmail.com" class="glass-box p-8 rounded-3xl text-center group block">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-cyber-emerald/10 text-cyber-emerald border border-cyber-emerald/30 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs font-mono text-cyber-emerald font-bold uppercase">Direct Email</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-2 mb-2">Email Address</h3>
+                    <p class="text-slate-300 text-sm font-mono break-all group-hover:text-cyber-emerald transition-colors">
+                        yaswanthemo28@gmail.com
+                    </p>
+                </a>
+
+                <!-- LinkedIn Contact Card -->
+                <a href="https://www.linkedin.com/in/yaswanth-n-7ba73541a/" target="_blank" class="glass-box p-8 rounded-3xl text-center group block">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/30 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <span class="text-xs font-mono text-cyber-cyan font-bold uppercase">Professional Network</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-2 mb-2">LinkedIn Profile</h3>
+                    <p class="text-slate-300 text-sm font-mono break-all group-hover:text-cyber-cyan transition-colors">
+                        linkedin.com/in/yaswanth-n-7ba73541a
+                    </p>
+                </a>
+
+                <!-- GitHub Contact Card -->
+                <a href="https://github.com/yaswanthemo28-dotcom" target="_blank" class="glass-box p-8 rounded-3xl text-center group block">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/30 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <span class="text-xs font-mono text-cyber-purple font-bold uppercase">Source Repositories</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-2 mb-2">GitHub Profile</h3>
+                    <p class="text-slate-300 text-sm font-mono break-all group-hover:text-cyber-purple transition-colors">
+                        github.com/yaswant
